@@ -4,7 +4,7 @@
  * Determines if the specified user ID is an affiliate.
  *
  * If no user ID is given, it will check the currently logged in user
- *  
+ *
  * @since 1.0
  * @return bool
  */
@@ -16,7 +16,7 @@ function affwp_is_affiliate( $user_id = 0 ) {
  * Retrieves the affiliate ID of the specified user
  *
  * If no user ID is given, it will check the currently logged in user
- *  
+ *
  * @since 1.0
  * @return int
  */
@@ -42,7 +42,7 @@ function affwp_get_affiliate_id( $user_id = 0 ) {
 
 /**
  * Retrieves an affiliate's user ID
- *  
+ *
  * @since 1.0
  * @return bool
  */
@@ -62,7 +62,7 @@ function affwp_get_affiliate_user_id( $affiliate ) {
 
 /**
  * Retrieves the affiliate object
- *  
+ *
  * @since 1.0
  * @return object
  */
@@ -81,7 +81,7 @@ function affwp_get_affiliate( $affiliate ) {
 
 /**
  * Retrieves the affiliate's status
- *  
+ *
  * @since 1.0
  * @return string
  */
@@ -100,7 +100,7 @@ function affwp_get_affiliate_status( $affiliate ) {
 
 /**
  * Sets the status for an affiliate
- *  
+ *
  * @since 1.0
  * @return bool
  */
@@ -127,7 +127,7 @@ function affwp_set_affiliate_status( $affiliate, $status = '' ) {
 
 /**
  * Retrieves the referral rate for an affiliate
- *  
+ *
  * @since 1.0
  * @return float
  */
@@ -158,7 +158,7 @@ function affwp_get_affiliate_rate( $affiliate_id = 0, $formatted = false ) {
 
 /**
  * Retrieves the affiliate's email address
- *  
+ *
  * @since 1.0
  * @return string
  */
@@ -193,7 +193,7 @@ function affwp_get_affiliate_email( $affiliate ) {
 
 /**
  * Deletes an affiliate
- *  
+ *
  * @since 1.0
  * @return bool
  */
@@ -215,7 +215,7 @@ function affwp_delete_affiliate( $affiliate ) {
 
 /**
  * Retrieves the total paid earnings for an affiliate
- *  
+ *
  * @since 1.0
  * @return float
  */
@@ -248,7 +248,7 @@ function affwp_get_affiliate_earnings( $affiliate, $formatted = false ) {
 
 /**
  * Retrieves the total unpaid earnings for an affiliate
- *  
+ *
  * @since 1.0
  * @return float
  */
@@ -286,7 +286,7 @@ function affwp_get_affiliate_unpaid_earnings( $affiliate, $formatted = false ) {
 
 /**
  * Increases an affiliate's total paid earnings by the specified amount
- *  
+ *
  * @since 1.0
  * @return float|bool
  */
@@ -320,7 +320,7 @@ function affwp_increase_affiliate_earnings( $affiliate_id = 0, $amount = '' ) {
 
 /**
  * Decreases an affiliate's total paid earnings by the specified amount
- *  
+ *
  * @since 1.0
  * @return float|bool
  */
@@ -361,7 +361,7 @@ function affwp_decrease_affiliate_earnings( $affiliate_id = 0, $amount = '' ) {
 
 /**
  * Retrieves the number of paid referrals for an affiliate
- *  
+ *
  * @since 1.0
  * @return int
  */
@@ -380,7 +380,7 @@ function affwp_get_affiliate_referral_count( $affiliate ) {
 
 /**
  * Increases an affiliate's total paid referrals by 1
- *  
+ *
  * @since 1.0
  * @return float|bool
  */
@@ -407,7 +407,7 @@ function affwp_increase_affiliate_referral_count( $affiliate_id = 0 ) {
 
 /**
  * Decreases an affiliate's total paid referrals by 1
- *  
+ *
  * @since 1.0
  * @return float|bool
  */
@@ -436,7 +436,7 @@ function affwp_decrease_affiliate_referral_count( $affiliate_id = 0 ) {
 
 /**
  * Retrieves an affiliate's total visit count
- *  
+ *
  * @since 1.0
  * @return int
  */
@@ -461,7 +461,7 @@ function affwp_get_affiliate_visit_count( $affiliate ) {
 
 /**
  * Increases an affiliate's total visit count by 1
- *  
+ *
  * @since 1.0
  * @return int
  */
@@ -488,7 +488,7 @@ function affwp_increase_affiliate_visit_count( $affiliate_id = 0 ) {
 
 /**
  * Decreases an affiliate's total visit count by 1
- *  
+ *
  * @since 1.0
  * @return float|bool
  */
@@ -519,7 +519,7 @@ function affwp_decrease_affiliate_visit_count( $affiliate_id = 0 ) {
 
 /**
  * Retrieves the affiliate's conversion rate
- *  
+ *
  * @since 1.0
  * @return float
  */
@@ -547,7 +547,7 @@ function affwp_get_affiliate_conversion_rate( $affiliate ) {
 
 /**
  * Adds a new affiliate to the database
- *  
+ *
  * @since 1.0
  * @return bool
  */
@@ -565,7 +565,8 @@ function affwp_add_affiliate( $data = array() ) {
 
 		$args = array(
 			'user_id' => $user_id,
-			'rate'    => ! empty( $data['rate'] ) ? sanitize_text_field( $data['rate'] ) : ''
+			'rate'    => ! empty( $data['rate'] ) ? sanitize_text_field( $data['rate'] ) : '',
+			'payment_email' => ! empty( $data['payment_email'] ) ? sanitize_text_field( $data['payment_email'] ) : ''
 		);
 
 		if( affiliate_wp()->affiliates->add( $args ) ) {
@@ -586,7 +587,7 @@ function affwp_add_affiliate( $data = array() ) {
 
 /**
  * Updates an affiliate
- *  
+ *
  * @since 1.0
  * @return bool
  */
@@ -621,7 +622,7 @@ function affwp_update_affiliate( $data = array() ) {
 
 /**
  * Updates an affiliate's notification settings
- *  
+ *
  * @since 1.0
  * @return bool
  */
