@@ -87,7 +87,7 @@ function affwp_get_tools_tabs() {
 function affwp_recount_tab() {
 ?>
 	<div id="affwp-dashboard-widgets-wrap">
-		<div class="metabox-holder">	
+		<div class="metabox-holder">
 			<div class="postbox">
 				<h3><span><?php _e( 'Recount Affiliate Stats', 'affiliate-wp' ); ?></span></h3>
 				<div class="inside">
@@ -129,13 +129,13 @@ add_action( 'affwp_tools_tab_recount', 'affwp_recount_tab' );
 function affwp_migration_tab() {
 ?>
 	<div id="affwp-dashboard-widgets-wrap">
-		<div class="metabox-holder">	
+		<div class="metabox-holder">
 			<div class="postbox">
 				<div class="inside">
 					<p><?php _e( 'These tools assist in migrating affiliate and referral data from existing platforms.', 'affiliate-wp' ); ?></p>
 				</div><!-- .inside -->
 			</div><!-- .postbox -->
-	
+			<?php if ( defined( 'AFFILIATES_PRO_DEFAULT_VERSION' ) ) { ?>
 			<div class="postbox">
 				<h3><span><?php _e( 'Affiliates Pro', 'affiliate-wp' ); ?></span></h3>
 				<div class="inside">
@@ -151,6 +151,7 @@ function affwp_migration_tab() {
 					</form>
 				</div><!-- .inside -->
 			</div><!-- .postbox -->
+			<?php } ?>
 		</div><!-- .metabox-holder -->
 	</div><!-- #affwp-dashboard-widgets-wrap -->
 <?php
@@ -166,7 +167,7 @@ add_action( 'affwp_tools_tab_migration', 'affwp_migration_tab' );
 function affwp_export_import_tab() {
 ?>
 	<div id="affwp-dashboard-widgets-wrap">
-		<div class="metabox-holder">	
+		<div class="metabox-holder">
 			<div class="postbox">
 				<h3><span><?php _e( 'Export Referrals', 'affiliate-wp' ); ?></span></h3>
 				<div class="inside">
@@ -198,7 +199,7 @@ function affwp_export_import_tab() {
 					</form>
 				</div><!-- .inside -->
 			</div><!-- .postbox -->
-	
+
 			<div class="postbox">
 				<h3><span><?php _e( 'Export Settings', 'affiliate-wp' ); ?></span></h3>
 				<div class="inside">
@@ -212,7 +213,7 @@ function affwp_export_import_tab() {
 					</form>
 				</div><!-- .inside -->
 			</div><!-- .postbox -->
-	
+
 			<div class="postbox">
 				<h3><span><?php _e( 'Import Settings', 'affiliate-wp' ); ?></span></h3>
 				<div class="inside">
